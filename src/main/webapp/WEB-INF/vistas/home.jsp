@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -8,7 +9,17 @@
 	</head>
 	<body>
 		<div class = "container">
-			<h1>Bienvenidos a Taller Web 1</h1>
+			<h1>Bienvenidos a Erudito</h1>
+			<div>
+				<form:form method="POST" action="/jugar" modelAttribute="Jugador">
+					<div class="form-group">
+						<label for="name">Ingrese su nombre:</label>
+						<input name="name" class="form-control" id="name" type="text" placeholder="Nombre" />
+					</div>
+
+					<button class="btn btn-primary">Jugar</button>
+				</form:form>
+			</div>
 		</div>
 		<!-- Placed at the end of the document so the pages load faster -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" ></script>
