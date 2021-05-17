@@ -1,5 +1,6 @@
 package ar.edu.unlam.erudito.controladores;
 
+import ar.edu.unlam.erudito.modelo.Jugador;
 import org.junit.Test;
 import org.springframework.web.servlet.ModelAndView;
 import static org.assertj.core.api.Assertions.*;
@@ -16,9 +17,16 @@ public class testJuegoController {
     }
 
     @Test
+    public void testQueRecibeJugador(){
+        mav=juego.home();
+        assertThat(mav.getModel().get("jugador")).isInstanceOf(Jugador.class);
+    }
+
+    @Test
     public void testQueRecibeNombre(){
-        String nombreJugador="Matias";
-        mav=juego.recibirNombre(nombreJugador);
-        assertThat(mav.getModel().get("nombre")).isEqualTo(nombreJugador);
+        Jugador jugador=new Jugador();
+        jugador.setNombre("Matias");
+        mav=juego.recibirNombre(jugador);
+        assertThat(mav.getModel().get("nombre")).isEqualTo("Matias");
     }
 }

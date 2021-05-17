@@ -9,12 +9,12 @@
 	</head>
 	<body>
 		<div class = "container">
-			<h1>Bienvenidos a Erudito</h1>
+			<h1>Home - El Erudito</h1>
 			<div>
-				<form:form method="POST" action="/jugar" modelAttribute="Jugador">
+				<form:form method="POST" action="jugar" modelAttribute="jugador">
 					<div class="form-group">
 						<label for="name">Ingrese su nombre:</label>
-						<input name="name" class="form-control" id="name" type="text" placeholder="Nombre" />
+						<form:input path="nombre" class="form-control" id="name" type="text" placeholder="Nombre" />
 					</div>
 
 					<button class="btn btn-primary">Jugar</button>
