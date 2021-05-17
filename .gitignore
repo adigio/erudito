@@ -16,6 +16,3 @@ hs_err_pid*
 *.iml
 src/main/resources/hibernateContext.xml
 src/main/webapp/WEB-INF/classes
-src/main/java/ar/edu/unlam/erudito/servicios/ServicioJuego.java
-src/main/java/ar/edu/unlam/erudito/servicios/ServicioJuegoImpl.java
-src/test/java/ar/edu/unlam/erudito/servicios/
