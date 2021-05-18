@@ -29,4 +29,10 @@ public class testJuegoController {
         mav=juego.recibirNombre(jugador);
         assertThat(mav.getModel().get("nombre")).isEqualTo("Matias");
     }
+
+    @Test
+    public void testQueRecibeNumero(){
+        mav=juego.recibirNumero();
+        assertThat(mav.getModel().get("codigo")).isEqualTo(12345);
+    }
 }

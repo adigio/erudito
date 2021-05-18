@@ -25,4 +25,11 @@ public class JuegoController {
         modelo.put("nombre",jugador.getNombre());
         return new ModelAndView("bienvenida",modelo);
     }
+
+    public ModelAndView recibirNumero() {
+        Integer codigo=12345;
+        ModelMap modelo=new ModelMap();
+        modelo.put("codigo",codigo);
+        return new ModelAndView("empezar",modelo);
+    }
 }
