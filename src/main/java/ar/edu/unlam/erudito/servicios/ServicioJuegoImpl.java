@@ -10,7 +10,9 @@ public class ServicioJuegoImpl implements ServicioJuego {
 
     @Override
     public Integer generarCodigo() {
-        Integer codigo=(int)(Math.random()*(10-1)+1);
+        Integer minimo=1;
+        Integer maximo=10;
+        Integer codigo=(int)(Math.random()*(maximo-minimo)+minimo);
         return codigo;
     }
 }
