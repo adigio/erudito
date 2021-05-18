@@ -1,13 +1,14 @@
 package ar.edu.unlam.erudito.controladores;
 
 import ar.edu.unlam.erudito.modelo.Jugador;
+import ar.edu.unlam.erudito.servicios.ServicioJuegoImpl;
 import org.junit.Test;
 import org.springframework.web.servlet.ModelAndView;
 import static org.assertj.core.api.Assertions.*;
 
 public class testJuegoController {
 
-    private JuegoController juego=new JuegoController();
+    private JuegoController juego=new JuegoController(new ServicioJuegoImpl());
     private ModelAndView mav;
 
     @Test

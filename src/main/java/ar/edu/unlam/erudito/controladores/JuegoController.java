@@ -1,6 +1,8 @@
 package ar.edu.unlam.erudito.controladores;
 
 import ar.edu.unlam.erudito.modelo.Jugador;
+import ar.edu.unlam.erudito.servicios.ServicioJuego;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -10,6 +12,12 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class JuegoController {
+    private ServicioJuego servicioJuego;
+
+    @Autowired
+    public JuegoController(ServicioJuego servicioJuego){
+        this.servicioJuego=servicioJuego;
+    }
 
     @RequestMapping("/")
     public ModelAndView home(){
@@ -27,7 +35,7 @@ public class JuegoController {
     }
 
     public ModelAndView recibirNumero() {
-        Integer codigo=12345;
+        Integer codigo= servicioJuego.generarCodigo();
         ModelMap modelo=new ModelMap();
         modelo.put("codigo",codigo);
         return new ModelAndView("empezar",modelo);
