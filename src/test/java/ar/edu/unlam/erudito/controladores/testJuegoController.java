@@ -34,6 +34,6 @@ public class testJuegoController {
     @Test
     public void testQueRecibeNumero(){
         mav=juego.recibirNumero();
-        assertThat(mav.getModel().get("codigo")).isEqualTo(12345);
+        assertThat(mav.getModel().get("codigo")).isInstanceOf(Integer.class);
     }
 }
