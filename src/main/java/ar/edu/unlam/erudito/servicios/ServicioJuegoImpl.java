@@ -10,6 +10,7 @@ public class ServicioJuegoImpl implements ServicioJuego {
 
     @Override
     public Integer generarCodigo() {
-        return 12345;
+        Integer codigo=12345;
+        return codigo;
     }
 }
