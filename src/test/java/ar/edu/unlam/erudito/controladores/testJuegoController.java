@@ -27,13 +27,15 @@ public class testJuegoController {
     public void testQueRecibeNombre(){
         Jugador jugador=new Jugador();
         jugador.setNombre("Matias");
-        mav=juego.recibirNombre(jugador);
+        mav=juego.recibirDatosDelJuego(jugador);
         assertThat(mav.getModel().get("nombre")).isEqualTo("Matias");
     }
 
     @Test
     public void testQueRecibeNumero(){
-        mav=juego.recibirNumero();
+        Jugador jugador=new Jugador();
+        jugador.setNombre("Matias");
+        mav=juego.recibirDatosDelJuego(jugador);
         assertThat(mav.getModel().get("codigo")).isInstanceOf(Integer.class);
     }
 }

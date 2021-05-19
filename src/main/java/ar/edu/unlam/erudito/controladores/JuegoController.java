@@ -27,17 +27,12 @@ public class JuegoController {
         return new ModelAndView("home",modelo);
     }
 
-    @RequestMapping(path="/jugar",method = RequestMethod.POST)
-    public ModelAndView recibirNombre(@ModelAttribute("jugador") Jugador jugador) {
+    @RequestMapping(path="/invitar",method = RequestMethod.POST)
+    public ModelAndView recibirDatosDelJuego(@ModelAttribute("jugador") Jugador jugador) {
         ModelMap modelo=new ModelMap();
-        modelo.put("nombre",jugador.getNombre());
-        return new ModelAndView("bienvenida",modelo);
-    }
-
-    public ModelAndView recibirNumero() {
         Integer codigo= servicioJuego.generarCodigo();
-        ModelMap modelo=new ModelMap();
+        modelo.put("nombre",jugador.getNombre());
         modelo.put("codigo",codigo);
-        return new ModelAndView("empezar",modelo);
+        return new ModelAndView("bienvenida",modelo);
     }
 }
