@@ -11,7 +11,7 @@
 		<div class = "container">
 			<h1>Home - El Erudito</h1>
 			<div>
-				<form:form method="POST" action="jugar" modelAttribute="jugador">
+				<form:form method="POST" action="invitar" modelAttribute="jugador">
 					<div class="form-group">
 						<label for="name">Ingrese su nombre:</label>
 						<form:input path="nombre" class="form-control" id="name" type="text" placeholder="Nombre" />
