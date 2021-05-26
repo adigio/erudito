@@ -6,6 +6,7 @@ import java.util.List;
 
 @Entity
 public class TarjetaSecuencia extends Tarjeta {
+    private Integer categoria=1;
     @ElementCollection
     List<String> opciones=new ArrayList<>();
 
@@ -15,5 +16,13 @@ public class TarjetaSecuencia extends Tarjeta {
 
     public void setOpciones(List<String> opciones) {
         this.opciones = opciones;
+    }
+
+    public Integer getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Integer categoria) {
+        this.categoria = categoria;
     }
 }

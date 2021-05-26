@@ -5,6 +5,7 @@ import java.util.List;
 
 @Entity
 public class TarjetaEnComun extends Tarjeta{
+    private Integer categoria=3;
     @ElementCollection
     private List<String> opciones;
     private String respuesta;
@@ -32,5 +33,13 @@ public class TarjetaEnComun extends Tarjeta{
 
     public void setPalabraClave(String palabraClave) {
         this.palabraClave = palabraClave;
+    }
+
+    public Integer getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Integer categoria) {
+        this.categoria = categoria;
     }
 }

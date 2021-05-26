@@ -8,6 +8,7 @@ import java.util.Map;
 
 @Entity
 public class TarjetaAsociacion extends Tarjeta{
+    private Integer categoria=2;
     @ElementCollection
     @MapKeyColumn(name = "clave")
     @Column(name="valor")
@@ -21,4 +22,11 @@ public class TarjetaAsociacion extends Tarjeta{
         this.opciones = opciones;
     }
 
+    public Integer getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Integer categoria) {
+        this.categoria = categoria;
+    }
 }
