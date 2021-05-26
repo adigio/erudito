@@ -37,7 +37,7 @@ public class TestJuegoRepo extends SpringTest {
         Tarjeta nueva= crearTarjetaSecuencia();
         guardarTarjeta(nueva);
         Integer categoria=1;
-        List<Tarjeta> obtenida=repo.obtenerTarjetas(categoria);
+        List<Tarjeta> obtenida=repo.obtenerTarjetasSecuencia();
         assertThat(obtenida.get(0).getPregunta()).isEqualTo(nueva.getPregunta());
     }
 
@@ -46,7 +46,7 @@ public class TestJuegoRepo extends SpringTest {
         Tarjeta nueva= crearTarjetaAsociacion();
         guardarTarjeta(nueva);
         Integer categoria=2;
-        List<Tarjeta> obtenida=repo.obtenerTarjetas(categoria);
+        List<Tarjeta> obtenida=repo.obtenerTarjetasAsociacion();
         assertThat(obtenida.get(0).getPregunta()).isEqualTo(nueva.getPregunta());
     }
 
@@ -55,7 +55,7 @@ public class TestJuegoRepo extends SpringTest {
         Tarjeta nueva= crearTarjetaEnComun();
         guardarTarjeta(nueva);
         Integer categoria=3;
-        List<Tarjeta> obtenida=repo.obtenerTarjetas(categoria);
+        List<Tarjeta> obtenida=repo.obtenerTarjetasEnComun();
         assertThat(obtenida.get(0).getPregunta()).isEqualTo(nueva.getPregunta());
     }
 
@@ -64,7 +64,7 @@ public class TestJuegoRepo extends SpringTest {
         Tarjeta nueva= crearTarjetaAproximacion();
         guardarTarjeta(nueva);
         Integer categoria=4;
-        List<Tarjeta> obtenida=repo.obtenerTarjetas(categoria);
+        List<Tarjeta> obtenida=repo.obtenerTarjetasAproximacion();
         assertThat(obtenida.get(0).getPregunta()).isEqualTo(nueva.getPregunta());
     }
 

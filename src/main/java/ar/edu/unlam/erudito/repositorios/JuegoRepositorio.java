@@ -8,5 +8,10 @@ import java.util.List;
 public interface JuegoRepositorio {
     Long guardarTarjeta(Tarjeta tarjeta);
 
-    List<Tarjeta> obtenerTarjetas(Integer categoria);
+//    List<Tarjeta> obtenerTarjetas(Integer categoria);
+
+    List<Tarjeta> obtenerTarjetasSecuencia();
+    List<Tarjeta> obtenerTarjetasAsociacion();
+    List<Tarjeta> obtenerTarjetasEnComun();
+    List<Tarjeta> obtenerTarjetasAproximacion();
 }
