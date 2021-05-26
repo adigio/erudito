@@ -1,20 +1,39 @@
 package ar.edu.unlam.erudito.servicios;
+
+import ar.edu.unlam.erudito.modelo.Tarjeta;
+import ar.edu.unlam.erudito.modelo.TarjetaSecuencia;
 import org.junit.Test;
 import org.mockito.Mockito;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import static org.assertj.core.api.Assertions.*;
 
 public class testJuegoService {
-
-    ServicioJuegoImpl servicio=new ServicioJuegoImpl();
+    @Autowired
+    ServicioJuegoImpl servicio;
 
     @Test
-    public void testQueRecibeUnNumero(){
-        ServicioJuego servicioMock= Mockito.mock(ServicioJuego.class);
-        Mockito.when(servicioMock.generarCodigo()).thenReturn(12345);
-        Integer numero= servicioMock.generarCodigo();
-        assertThat(numero).isEqualTo(12345);
+    public void testQueRecibeUnaTarjeta() {
+        Integer categoria = 1;
+        ServicioJuego mock = instanciaMockito();
+        Tarjeta nueva = new TarjetaSecuencia();
+        Mockito.when(mock.obtenerTarjeta(categoria)).thenReturn(nueva);
+        Tarjeta recibida = mock.obtenerTarjeta(categoria);
+        assertThat((((TarjetaSecuencia)recibida).getCategoria())).isEqualTo(categoria);
+    }
 
+    @Test
+    public void testQueRecibeUnNumero() {
+        ServicioJuego servicioMock = instanciaMockito();
+        Integer minimo = 100000;
+        Integer maximo = 999999;
+        Mockito.when(servicioMock.generarRandom(minimo, maximo)).thenReturn(123456);
+        Integer numero = servicioMock.generarRandom(minimo, maximo);
+        assertThat(numero).isEqualTo(123456);
+    }
+
+    private ServicioJuego instanciaMockito() {
+        ServicioJuego mock = Mockito.mock(ServicioJuego.class);
+        return mock;
     }
 }
